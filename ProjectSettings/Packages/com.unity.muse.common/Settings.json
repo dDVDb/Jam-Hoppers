@@ -4,12 +4,12 @@
             {
                 "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[System.Collections.Generic.List`1[[Unity.Muse.Common.Account.OrganizationInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
                 "key": "Unity.Muse.Common.Preferences.organizations",
-                "value": "{\"value\":[{\"rid\":1000}],\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"18967147232605\",\"org_name\":\"devel124012\",\"status\":\"free-trial\"}}]}}"
+                "value": "{\"value\":[{\"rid\":1000},{\"rid\":1001},{\"rid\":1002}],\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"4672976265085\",\"org_name\":\"OsoIvan1\",\"status\":\"free-trial\"}},{\"rid\":1001,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"3412756\",\"org_name\":\"COCO Amiwos\",\"status\":\"not-entitled\"}},{\"rid\":1002,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"4673371404238\",\"org_name\":\"LayneStyle\",\"status\":\"not-entitled\"}}]}}"
             },
             {
                 "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[Unity.Muse.Common.Account.OrganizationInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
                 "key": "Unity.Muse.Common.Preferences.organization",
-                "value": "{\"value\":{\"rid\":1000},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"18967147232605\",\"org_name\":\"devel124012\",\"status\":\"free-trial\"}}]}}"
+                "value": "{\"value\":{\"rid\":1000},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"4672976265085\",\"org_name\":\"OsoIvan1\",\"status\":\"free-trial\"}}]}}"
             },
             {
                 "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
@@ -19,7 +19,7 @@
             {
                 "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[Unity.Muse.Common.Account.UsageInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
                 "key": "Unity.Muse.Common.Preferences.usage",
-                "value": "{\"value\":{\"rid\":1000},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"UsageInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"used\":0,\"total\":1000}}]}}"
+                "value": "{\"value\":{\"rid\":1000},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"UsageInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"used\":152,\"total\":1000}}]}}"
             }
         ]
     }
