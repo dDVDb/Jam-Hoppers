@@ -98,6 +98,7 @@ public class Inventory : MonoBehaviour
         playerController?.BottleToFill?.AddItem(item);
         slot.Button.onClick.RemoveAllListeners();
         slot.gameObject.SetActive(false);
+        InventoryPage.gameObject.SetActive(false);
     }
 
     public void CreateSlot(Item item)

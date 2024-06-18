@@ -12,11 +12,14 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     bool _canEat;
     bool _canLeave;
+    bool _canTeleport;
  
     Item _itemToEat;
-    
+    Teleporter _activeTeleporter;
+
     [SerializeField]
     public Bottle BottleToFill {  get; private set; }
+   
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
             LeaveItem();
+
+        if(Input.GetKeyDown(KeyCode.T))
+            Teleport();
          
     }
     void Eat()
@@ -58,6 +64,13 @@ public class PlayerController : MonoBehaviour
             return;
 
         Inventory.Instance.InventoryPage.SetActive(true);
+    }
+
+    public void Teleport()
+    {
+        if (!_canTeleport) return;
+
+        _activeTeleporter?.StartTeleport();
     }
 
     private void FixedUpdate()
@@ -83,6 +96,15 @@ public class PlayerController : MonoBehaviour
             b.UpdateCountText();
             _canLeave = true;
         }
+
+        if (other.CompareTag("Teleporter"))
+        {
+            var t = other.GetComponent<Teleporter>();
+            _activeTeleporter = t;
+            t.Display.SetActive(true);
+            _canTeleport = true;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -101,6 +123,14 @@ public class PlayerController : MonoBehaviour
             BottleToFill = null;
             _canLeave = false;
            
+        }
+
+        if (other.CompareTag("Teleporter"))
+        {
+            var t = other.GetComponent<Teleporter>();
+            _activeTeleporter = null;
+            t.Display.SetActive(false);
+            _canTeleport = false;
         }
     }
 }
