@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
     bool _canLeave;
  
     Item _itemToEat;
-    Bottle _bottleToFill;
+    
+    [SerializeField]
+    public Bottle BottleToFill {  get; private set; }
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,7 +38,6 @@ public class PlayerController : MonoBehaviour
             LeaveItem();
          
     }
-
     void Eat()
     {
         if (!_canEat)
@@ -45,22 +46,18 @@ public class PlayerController : MonoBehaviour
         _canEat = false;
         animator.SetTrigger("Eat");
     }
-
     public void EatCallback()
     {
         _itemToEat?.gameObject.SetActive(false);
         Inventory.Instance.AddItem(_itemToEat);
+        Inventory.Instance.CreateSlot(_itemToEat);
     }
-
     public void LeaveItem()
     {
         if (!_canLeave)
             return;
 
-        _canLeave = false;
-        var i = Inventory.Instance.Fruits[0];
-        _bottleToFill?.AddItem(i);
-        Inventory.Instance.RemoveItem(i);
+        Inventory.Instance.InventoryPage.SetActive(true);
     }
 
     private void FixedUpdate()
@@ -81,7 +78,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Bottle"))
         {
             var b = other.GetComponentInParent<Bottle>();
-            _bottleToFill = b;
+            BottleToFill = b;
             b._display.SetActive(true);
             b.UpdateCountText();
             _canLeave = true;
@@ -101,7 +98,7 @@ public class PlayerController : MonoBehaviour
         {
             var b = other.GetComponentInParent<Bottle>();
             b._display.SetActive(false);
-            _bottleToFill = null;
+            BottleToFill = null;
             _canLeave = false;
            
         }
