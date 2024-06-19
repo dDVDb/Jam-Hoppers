@@ -18,6 +18,12 @@ public class Bottle : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _countText;
 
+    public bool IsFull {  get; private set; }
+
+
+    [SerializeField]
+    Sprite FullSprite;
+
     private void Awake()
     {
         _items = new List<Item>();
@@ -30,11 +36,21 @@ public class Bottle : MonoBehaviour
 
         _items.Add(i);
 
+        CheckFull();
+
         var f = GetComponentInParent<Friend>();
 
         f.ChooseRandomDialogue(i);
 
         UpdateCountText();
+    }
+
+    void CheckFull()
+    {
+        IsFull = _items.Count >= maxItems;
+        
+        if(IsFull)
+            GetComponent<SpriteRenderer>().sprite = FullSprite;
     }
 
     public void UpdateCountText()
