@@ -30,6 +30,10 @@ public class Bottle : MonoBehaviour
 
         _items.Add(i);
 
+        var f = GetComponentInParent<Friend>();
+
+        f.ChooseRandomDialogue(i);
+
         UpdateCountText();
     }
 

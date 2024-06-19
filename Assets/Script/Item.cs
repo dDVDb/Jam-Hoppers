@@ -18,4 +18,14 @@ public class Item : MonoBehaviour
 
     [field: SerializeField]
     public ItemType _itemType {  get; private set; }
+
+
+    public static bool operator ==(Item a, Item b)
+    {
+        return (a.gameObject.name == b.gameObject.name && a._itemType == b._itemType);
+    }
+    public static bool operator !=(Item a, Item b)
+    {
+        return (a.gameObject.name != b.gameObject.name || a._itemType != b._itemType);
+    }
 }
