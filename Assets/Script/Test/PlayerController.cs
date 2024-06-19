@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Bottle"))
         {
             var b = other.GetComponentInParent<Bottle>();
+            
+            if (b.IsFull)
+                return;
+
             BottleToFill = b;
             b._display.SetActive(true);
             b.UpdateCountText();
